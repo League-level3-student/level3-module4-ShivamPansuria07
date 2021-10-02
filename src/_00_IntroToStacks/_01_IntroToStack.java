@@ -5,8 +5,6 @@ import java.util.Stack;
 
 import javax.swing.JOptionPane;
 
-import org.omg.Messaging.SyncScopeHelper;
-
 public class _01_IntroToStack {
 
 	public static void main(String[] args) {

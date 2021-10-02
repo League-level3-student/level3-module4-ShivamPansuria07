@@ -1,6 +1,7 @@
 package _02_IntroToQueues;
 
 import java.util.ArrayDeque;
+import java.util.Iterator;
 
 public class _00_QueueDemo {
     public static void main(String[] args) {
@@ -46,7 +47,7 @@ public class _00_QueueDemo {
         lineToEnter.add("Irina");
         lineToEnter.add("Rosemary");
         lineToEnter.add("Arthur");
-
+        
         /*
          * The first person added to the Queue, Jerry, will be the first person
          * removed, followed by second person added, third person, etc.
