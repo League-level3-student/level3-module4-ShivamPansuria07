@@ -44,7 +44,7 @@ import org.junit.Test;
  * go back in the last position of the queue if they need more (or go home if
  * they are fine).
  * 
- * Each ticket takes one minutes to emit with no wasted time between purchases.
+ * Each ticket takes one minutes to emit w vith no wasted time between purchases.
  * You will be given a queue with all the people queuing and the initial
  * position of your buddy.
  * 
@@ -64,7 +64,7 @@ import org.junit.Test;
  */
 
 public class _02_BaseballTicketsTest {
-
+//,1,4,2,5,3
     @Test
     public void test1() {
         List<Integer> list = Arrays.asList(2, 5, 3, 6, 4); 
