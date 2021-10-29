@@ -53,7 +53,7 @@ public class Hangman implements KeyListener {
 		}
 		for (int i = 0; i < strpop.length(); i++) {
 			if (!Character.isAlphabetic(underscore.indexOf(i))) {
-				underscoreF += "_" + " ";
+				underscoreF += "_";
 
 			}
 		}
@@ -76,7 +76,7 @@ public class Hangman implements KeyListener {
 			for (int j = 0; j < strpop.length(); j++) {
 				
 				if (strpop.charAt(j)==strkey.charAt(0)) {
-					underscoreF = underscoreF.substring(0, j) + strkey + underscoreF.substring(j+2);
+					underscoreF = underscoreF.substring(0, j) + strkey + underscoreF.substring(j+1);
 					label.setText(underscoreF);
 
 				} 
@@ -84,13 +84,19 @@ public class Hangman implements KeyListener {
 
 			}
 		}else if (!strpop.contains(strkey)){
-			lives=lives-1;
-			System.out.println("You now have " + lives +" lives!");
-			if (lives==0){
-				System.out.println("You lost!");
-				str = JOptionPane.showInputDialog(null, "Would you like to play again?");
-				
+			if(lives>=1) {
+				lives=lives-1;
 			}
+			
+			System.out.println("You now have " + lives +" lives!");
+			for (int i = 0; i < strpop.length(); i++) {
+				if (lives<=0) {
+					System.out.println("You Lose!");
+				}
+					
+
+				}
+			
 		}
 		
 
