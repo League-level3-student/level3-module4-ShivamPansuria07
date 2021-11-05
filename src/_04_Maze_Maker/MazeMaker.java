@@ -23,9 +23,11 @@ public class MazeMaker {
         //    This will be the starting point. Then select a random cell along
         //    the opposite wall and remove its exterior wall. This will be the
         //    finish line.
+        int num = randGen.nextInt(maze.cells.length);
+        Cell mazeCells = maze.cells[num][0];
 
         // 2. select a random cell in the maze to start 
-        
+        selectNextPath(mazeCells);
         // 3. call the selectNextPath method with the randomly selected cell
 
         return maze;
@@ -34,21 +36,25 @@ public class MazeMaker {
     // 4. Complete the selectNextPathMethod
     private static void selectNextPath(Cell currentCell) {
         // A. SET currentCell as visited
-
+    	currentCell.setBeenVisited(true);
         // B. check for unvisited neighbors using the cell
-
         // C. if has unvisited neighbors,
-
+    	if(!getUnvisitedNeighbors(currentCell).isEmpty()) {
+    		
+    	
         // C1. select one at random.
-
+    		Random rand = new Random();
+    		int r = rand.nextInt(getUnvisitedNeighbors(currentCell).size());
+    	
         // C2. push it to the stack
-
+    	uncheckedCells.push(getUnvisitedNeighbors(currentCell).get(r));
         // C3. remove the wall between the two cells
-
+    	removeWalls(uncheckedCells.firstElement(), currentCell);
         // C4. make the new cell the current cell and SET it as visited
 
         // C5. call the selectNextPath method with the current cell
-
+    		
+    	}
 
         // D. if all neighbors are visited
 
@@ -110,7 +116,7 @@ public class MazeMaker {
         if (col < cols - 1 && !maze.getCell(row, col + 1).hasBeenVisited()) {
             unvisitedNeighbors.add(maze.getCell(row, col + 1));
         }
-
+        
         return unvisitedNeighbors;
     }
 }
