@@ -17,7 +17,7 @@ public class Maze {
         //    using row and col as the cell location
         for (int i = 0; i < cells.length; i++) {
         	 for (int k = 0; k < cells.length; k++) {
-        		cells[i][k] = new Cell(rows, cols);
+        		cells[i][k] = new Cell(i, k);
         	 }
         		
 		}
